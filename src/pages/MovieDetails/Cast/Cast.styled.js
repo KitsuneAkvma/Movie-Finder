@@ -16,10 +16,11 @@ export const StyledCast = styled.section`
     justify-content: center;
   }
   .Actor {
+    width: 20rem;
     display: flex;
     align-items: center;
     gap: 2rem;
-    flex: 1 1 25%;
+    flex: 1 1 30rem;
   }
   .actor-photo {
     border-radius: 0.25em;
