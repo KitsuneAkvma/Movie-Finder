@@ -35,7 +35,8 @@ export function Movies() {
   };
   useEffect(() => {
     refetch(`${API_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${filter}&page=${currentPage}`);
-  }, [currentPage]);
+  }, [currentPage, filter, refetch]);
+
   if (loading) return <Loader />;
   if (error) console.log({ error });
 
@@ -47,7 +48,7 @@ export function Movies() {
       <ul>
         {searchResults?.map(movie => {
           return (
-            <li className='movie' key={movie.id}>
+            <li className="movie" key={movie.id}>
               <Link to={`${movie.id}`} state={movie.id}>
                 <img
                   width="300px"
@@ -58,7 +59,8 @@ export function Movies() {
                       : posterPlaceholder
                   }
                   alt={`${movie.original_title} Poster`}
-                  title={movie.title} className='movie__poster'
+                  title={movie.title}
+                  className="movie__poster"
                 />
               </Link>
             </li>
