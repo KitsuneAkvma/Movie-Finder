@@ -15,16 +15,16 @@ export function Cast() {
     `${API_URL}/movie/${location.state}/credits?api_key=${API_KEY}&language=en-US`
   );
   const cast = data?.cast;
+  const placeholderMale =
+    'https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=';
+  const placeholderFemale =
+    'https://media.istockphoto.com/id/1327592692/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-woman.jpg?s=612x612&w=0&k=20&c=y-dvtlLq6ksJ9aJXkkw2prwGwSiQvY37JfPpb73wYTc=';
+
   console.log({ cast });
 
   if (loading) return <Loader />;
 
   if (error) console.log({ error });
-
-  const placeholderMale =
-    'https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=';
-  const placeholderFemale =
-    'https://media.istockphoto.com/id/1327592692/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-woman.jpg?s=612x612&w=0&k=20&c=y-dvtlLq6ksJ9aJXkkw2prwGwSiQvY37JfPpb73wYTc=';
 
   const choosePhoto = actor => {
     if (actor?.profile_path === null) {
@@ -36,12 +36,20 @@ export function Cast() {
   };
   return (
     <StyledCast>
-      <ul aria-label="List of actors">
+      <ul aria-label="List of actors" className="cast">
         {cast?.map(actor => {
           return (
-            <li key={actor?.id}>
-              <img src={choosePhoto(actor)} alt={actor?.name} width={200} height={250} />
-              <div className=''></div>
+            <li key={actor?.cast_id} className="Actor">
+              <img src={choosePhoto(actor)} alt={actor?.name} className="actor-photo" width={200} height={250} />
+              <div className="actor-information">
+                <div className="actor-name" aria-label="Actor name">
+                  {actor?.name}
+                </div>
+                <div className="actor-played-as">as</div>
+                <div className="actor-role" aria-label="Actor role">
+                  {actor?.character}
+                </div>
+              </div>
             </li>
           );
         })}

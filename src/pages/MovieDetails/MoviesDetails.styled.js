@@ -23,7 +23,7 @@ export const StyledMoviesDetails = styled.main`
     font-size: 2em;
     font-weight: 700;
   }
-  .boldText {
+  .bold-text {
     font-weight: 500;
   }
   .description {
@@ -44,7 +44,7 @@ export const StyledMoviesDetails = styled.main`
     background-color: ${colors.tertiary};
     border-radius: 0.2em;
   }
-  .navigationItem {
+  .navigation-item {
     padding: 0.3em 1em;
 
     background-color: ${colors.second};

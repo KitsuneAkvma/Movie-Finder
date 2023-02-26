@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Link, Routes, Route, NavLink } from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+
 //-----Assets
 import GlobalStyle from './assets/GlobalStyles.styled';
 import { Container } from './components/Container/Container.styled';
@@ -14,19 +14,11 @@ import { Reviews } from './pages/MovieDetails/Reviews/Reviews';
 
 import { NotFound } from './pages/Errors/NotFound/NotFound';
 //-----Hooks
-import useFetch from 'hooks/useFetch';
-import { Loader } from 'components/Loader/Loader';
 
 ///// Element's global variables /////
-const API_KEY = 'ff7d39b257d83d6457e06be28e08ca81';
-const API_URL = `https://api.themoviedb.org/3`;
 
 export const App = () => {
   /// States ///
-  const [movies, setMovies] = useState([]);
-  const [filter, setFilter] = useState('batman');
-
-  const [currentPage, setCurrentPage] = useState(1);
 
   // const { data, loading, error } = useFetch(
   //   `${API_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${filter}&page=${currentPage}`

@@ -11,8 +11,8 @@ const API_URL = `https://api.themoviedb.org/3`;
 export function MovieDetails() {
   const location = useLocation();
   const { data, loading, error } = useFetch(`${API_URL}/movie/${location.state}?api_key=${API_KEY}&language=en-US`);
+
   const movie = data;
-  console.log({ movie });
 
   if (loading) return <Loader />;
 
@@ -23,10 +23,10 @@ export function MovieDetails() {
       {' '}
       <h1>{movie?.title}</h1>
       <h4>
-        <span className="boldText">Original Title:</span> {movie?.original_title}
+        <span className="bold-text">Original Title:</span> {movie?.original_title}
       </h4>
       <h2>
-        <span className="boldText">Release date:</span> {movie?.release_date}
+        <span className="bold-text">Release date:</span> {movie?.release_date}
       </h2>
       <img
         src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`}
@@ -47,12 +47,12 @@ export function MovieDetails() {
         {movie?.overview}
       </div>
       <nav>
-        <li className="navigationItem">
+        <li className="navigation-item">
           <Link to="cast" state={location.state}>
             Cast
           </Link>
         </li>
-        <li className="navigationItem">
+        <li className="navigation-item">
           <Link to="reviews" state={location.state}>
             Reviews
           </Link>
