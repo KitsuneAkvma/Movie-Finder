@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledLoader = styled.div`
-  margin: auto;
+  display: block;
+  margin-inline: auto;
+  transform: translateY(50%);
 `;

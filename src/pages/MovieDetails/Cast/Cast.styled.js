@@ -1,7 +1,14 @@
+import { colors } from 'assets/styleVariables';
 import styled from 'styled-components';
 
 export const StyledCast = styled.section`
+  border-top: 5px solid ${colors.accent};
+  display: flex;
+  justify-content: center;
   margin-top: 2rem;
+  padding-top: 2rem;
+  width: 100%;
+  min-height: 30rem;
   .cast {
     display: flex;
     flex-flow: row wrap;
@@ -30,5 +37,17 @@ export const StyledCast = styled.section`
   }
   .actor-role {
     font-size: 1.75em;
+  }
+  .not-found {
+    &__header {
+      font-size: 3em;
+      font-weight: 900;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+    &__desc {
+      font-size: 1.75em;
+    }
   }
 `;

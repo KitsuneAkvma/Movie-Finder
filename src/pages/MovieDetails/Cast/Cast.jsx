@@ -36,6 +36,13 @@ export function Cast() {
   };
   return (
     <StyledCast>
+      {' '}
+      {cast?.length === 0 && (
+        <section className="not-found">
+          <h2 className="not-found__header">Sorry...</h2>
+          <h3 className="not-found__desc">There are no cast info at the moment 😔</h3>
+        </section>
+      )}
       <ul aria-label="List of actors" className="cast">
         {cast?.map(actor => {
           return (

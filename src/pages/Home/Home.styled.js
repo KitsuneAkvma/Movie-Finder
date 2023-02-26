@@ -13,4 +13,11 @@ export const StyledHome = styled.main`
     gap: 1rem;
     justify-content: center;
   }
+  .movie {
+    transition: transform 0.33s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.33s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    &:hover {
+      filter: drop-shadow(5px 5px 10px #000);
+      transform: scale(1.02);
+    }
+  }
 `;

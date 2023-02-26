@@ -6,10 +6,10 @@ export function Navbar() {
   return (
     <StyledNavbar>
       {' '}
-      <li>
+      <li className='navigation__item'>
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
+      <li className='navigation__item'>
         <NavLink to="/movies/">Movies</NavLink>
       </li>
     </StyledNavbar>

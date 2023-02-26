@@ -23,7 +23,7 @@ export function Home() {
       <ul>
         {trendingMovies?.map(movie => {
           return (
-            <li key={movie.id}>
+            <li className='movie' key={movie.id}>
               {' '}
               <Link to={`movies/${movie.id}`} state={movie.id}>
                 <img
