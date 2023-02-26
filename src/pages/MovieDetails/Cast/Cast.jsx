@@ -20,7 +20,7 @@ export function Cast() {
   const placeholderFemale =
     'https://media.istockphoto.com/id/1327592692/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-woman.jpg?s=612x612&w=0&k=20&c=y-dvtlLq6ksJ9aJXkkw2prwGwSiQvY37JfPpb73wYTc=';
 
-  console.log({ cast });
+
 
   if (loading) return <Loader />;
 

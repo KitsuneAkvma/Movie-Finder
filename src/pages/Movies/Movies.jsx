@@ -17,11 +17,7 @@ export function Movies() {
   const searchResults = data?.results;
   const totalPages = data?.total_pages;
   const posterPlaceholder = 'https://www.altavod.com/assets/images/poster-placeholder.png';
-  console.log({ data });
 
-  // const handleSearch = e => {
-  //   refetch(`${API_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${filter}&page=${currentPage}`);
-  // };
   const handleNewSearch = e => {
     e.preventDefault();
     setCurrentPage(1);
@@ -35,8 +31,7 @@ export function Movies() {
   };
   useEffect(() => {
     refetch(`${API_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${filter}&page=${currentPage}`);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentPage]);
+  }, [currentPage, filter, refetch]);
 
   if (loading) return <Loader />;
   if (error) console.log({ error });

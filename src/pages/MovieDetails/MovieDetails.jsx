@@ -31,7 +31,7 @@ export function MovieDetails() {
 
   if (error) console.log({ error });
 
-  console.log({ data });
+
 
   return (
     <StyledMoviesDetails>

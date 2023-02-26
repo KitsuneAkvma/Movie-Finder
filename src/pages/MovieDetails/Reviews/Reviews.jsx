@@ -18,8 +18,6 @@ export function Reviews() {
   const reviews = data?.results;
   const userImage = 'https://i.pinimg.com/originals/62/ca/d3/62cad3f091e19cb4825345b50a3e9c5c.jpg';
 
-  console.log({ reviews });
-
   if (loading) return <Loader />;
 
   if (error) console.log({ error });
@@ -27,9 +25,9 @@ export function Reviews() {
   return (
     <StyledReviews>
       {reviews?.length === 0 && (
-        <section className='not-found'>
-          <h2 className='not-found__header'>Sorry...</h2>
-          <h3 className='not-found__desc'>There are no reviews at the moment 😔</h3>
+        <section className="not-found">
+          <h2 className="not-found__header">Sorry...</h2>
+          <h3 className="not-found__desc">There are no reviews at the moment 😔</h3>
         </section>
       )}
       <ul className="reviews-list" aria-label="Reviews">
