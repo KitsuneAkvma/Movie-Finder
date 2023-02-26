@@ -1,0 +1,2 @@
+export const colors = { primary: '#16213E', second: '#0F3460', tertiary: '#533483', accent: '#E94560' };
+export const textColors = { primary: '#ECF2FF', second: '#E3DFFD', tertiary: '#E5D1FA', accent: '#FFF4D2' };

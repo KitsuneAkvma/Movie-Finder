@@ -1,18 +1,22 @@
 import React from 'react';
 
-import StyledLoader from './Loader.styled';
+import { Puff } from 'react-loader-spinner';
+import { StyledLoader } from './Loader.styled';
 
 export const Loader = () => {
   return (
     <StyledLoader>
-      <div className="loadingio-spinner-cube-96isy8bw2ib">
-        <div className="ldio-9rzbk4whh1h">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
+      {' '}
+      <Puff
+        height="200"
+        width="200"
+        radius={1}
+        color="#E94560"
+        ariaLabel="puff-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+      />
     </StyledLoader>
   );
 };
