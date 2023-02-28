@@ -29,9 +29,13 @@ export function Movies() {
   const handleLoadMore = e => {
     setCurrentPage(prev => prev + 1);
   };
-  useEffect(() => {
-    refetch(`${API_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${filter}&page=${currentPage}`);
-  }, [currentPage, filter, refetch]);
+  useEffect(
+    () => {
+      refetch(`${API_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${filter}&page=${currentPage}`);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [currentPage]
+  );
 
   if (loading) return <Loader />;
   if (error) console.log({ error });
