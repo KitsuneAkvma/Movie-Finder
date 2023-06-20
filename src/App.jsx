@@ -13,19 +13,8 @@ import { Cast } from './pages/MovieDetails/Cast/Cast';
 import { Reviews } from './pages/MovieDetails/Reviews/Reviews';
 
 import { NotFound } from './pages/Errors/NotFound/NotFound';
-//-----Hooks
-
-///// Element's global variables /////
 
 export const App = () => {
-  /// States ///
-
-  // const { data, loading, error } = useFetch(
-  //   `${API_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${filter}&page=${currentPage}`
-  // );
-
-  // if (loading) return <Loader />;
-  // if (error) console.log({ error });
 
   return (
     <>
